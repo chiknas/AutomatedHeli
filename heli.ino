@@ -65,6 +65,7 @@ void loop() {
 
     
     //measure current at A0
+    //test
     /*
     delay(1000); 
     int sensorValue = analogRead(A0);
