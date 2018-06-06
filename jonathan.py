@@ -6,6 +6,7 @@ GPIO.setmode(GPIO.BCM)
 
 #initialize mode pin
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+print("test")
 
 zero_speed = 125
 max_speed = 4000
