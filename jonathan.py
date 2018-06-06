@@ -43,13 +43,13 @@ def altitude_hold(current_altitude):
 
 #initilize mode
 def initialize_controller():
-	dac.set_voltage(zero_speed)
-        time.sleep(1)
-        dac.set_voltage(max_speed)
-        time.sleep(2)
-        dac.set_voltage(zero_speed)
-        print("close switch")
-        time.sleep(2)
+    dac.set_voltage(zero_speed)
+    time.sleep(1)
+    dac.set_voltage(max_speed)
+    time.sleep(2)
+    dac.set_voltage(zero_speed)
+    print("close switch")
+    time.sleep(2)
 
 # Create a DAC instance(I2C address and bus number).
 dac = Adafruit_MCP4725.MCP4725(address=0x60, busnum=1)
@@ -72,11 +72,11 @@ while 1:
     #get data and check if empty to re-open the connection
     data = conn.recv(BUFFER_SIZE)
     if not data:
-	dac.set_voltage(zero_speed)
-	conn.close()
-	s.listen(1)
-	conn, addr = s.accept()
-	print('Connection address:', addr)
+        dac.set_voltage(zero_speed)
+        conn.close()
+        s.listen(1)
+        conn, addr = s.accept()
+        print('Connection address:', addr)
     
     #convert to distance
     #distance = float(str(data).split("'")[1])
